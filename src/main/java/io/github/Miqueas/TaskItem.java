@@ -1,5 +1,8 @@
 package io.github.Miqueas;
 
+import static io.github.Miqueas.Fonts.*;
+import java.awt.font.TextAttribute;
+import java.util.Map;
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,10 +17,17 @@ public class TaskItem extends JPanel {
     setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
 
     JCheckBox checkbox = new JCheckBox(task.text(), task.done());
-    checkbox.addActionListener(ev -> {});
+    checkbox.setFont(normal.deriveFont(Map.of(
+      TextAttribute.STRIKETHROUGH, task.done()
+    )));
+    checkbox.setFocusPainted(false);
+    checkbox.addActionListener(ev -> {
+      provider.setDone(task.id(), checkbox.isSelected());
+    });
 
     JButton deleteButton = new JButton("X");
-    deleteButton.setFont(Fonts.bold);
+    deleteButton.setFont(bold);
+    deleteButton.setFocusPainted(false);
     deleteButton.addActionListener(ev -> {
       provider.removeTask(task.id());
     });
