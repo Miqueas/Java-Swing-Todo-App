@@ -10,8 +10,8 @@ public class TasksProvider {
   private final List<TaskModel> tasks;
 
   public TasksProvider() {
-    notifier = new PropertyChangeSupport(this);
     tasks = new ArrayList<TaskModel>();
+    notifier = new PropertyChangeSupport(this);
   }
 
   public List<TaskModel> getTasks() {
@@ -25,12 +25,12 @@ public class TasksProvider {
   public void addTask(String text, boolean done) {
     TaskModel task = new TaskModel(tasks.size(), text, done);
     tasks.add(task);
-    notifier.firePropertyChange("tasks", null, tasks);
+    notifier.firePropertyChange("add", null, tasks);
   }
 
   public void removeTask(int id) {
     tasks.removeIf(task -> task.id() == id);
-    notifier.firePropertyChange("tasks", null, tasks);
+    notifier.firePropertyChange("remove", null, tasks);
   }
 
   public void setDone(int id, boolean done) {
@@ -42,6 +42,6 @@ public class TasksProvider {
       return task;
     });
 
-    notifier.firePropertyChange("tasks", null, tasks);
+    notifier.firePropertyChange("update", null, tasks);
   }
 }
