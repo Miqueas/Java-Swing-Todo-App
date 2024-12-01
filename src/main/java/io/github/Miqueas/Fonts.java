@@ -3,8 +3,8 @@ package io.github.Miqueas;
 import java.awt.Font;
 
 public class Fonts {
-  public static Font normal = new Font("sans serif", Font.PLAIN, 12);
-  public static Font bold = new Font("sans serif", Font.BOLD, 12);
-  public static Font title = new Font("sans serif", Font.BOLD, 16);
-  public static Font display = new Font("sans serif", Font.BOLD, 20);
+  public static final Font normal = new Font(Font.SANS_SERIF, Font.PLAIN, 12);
+  public static final Font bold = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+  public static final Font title = new Font(Font.SANS_SERIF, Font.BOLD, 16);
+  public static final Font display = new Font(Font.SANS_SERIF, Font.BOLD, 20);
 }
