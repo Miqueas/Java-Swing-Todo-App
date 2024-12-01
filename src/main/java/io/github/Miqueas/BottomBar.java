@@ -2,21 +2,22 @@ package io.github.Miqueas;
 
 import static io.github.Miqueas.Fonts.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class BottomBar extends JPanel {
-  private final JCheckBox doneCheckBox;
+  private final JCheckBox checkBox;
   private final JTextField input;
   private final TasksProvider provider;
 
   public BottomBar(TasksProvider tasksProvider) {
     provider = tasksProvider;
-    setLayout(new FlowLayout(FlowLayout.CENTER));
+    setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+    setBorder(new EmptyBorder(10, 10, 10, 10));
 
-    JLabel doneLabel = new JLabel("Done?");
-    doneLabel.setFont(normal);
-
-    doneCheckBox = new JCheckBox();
+    checkBox = new JCheckBox("Done", false);
+    checkBox.setFont(normal);
+    checkBox.setFocusPainted(false);
 
     input = new JTextField(20);
     input.setFont(normal);
@@ -27,17 +28,17 @@ public class BottomBar extends JPanel {
     addButton.setFocusPainted(false);
     addButton.addActionListener(ev -> addTask());
 
-    add(doneLabel);
-    add(doneCheckBox);
+    add(checkBox);
+    add(Box.createRigidArea(new Dimension(10, 0)));
     add(input);
+    add(Box.createRigidArea(new Dimension(10, 0)));
     add(addButton);
   }
 
   private void addTask() {
     String text = input.getText();
-    if (!text.isEmpty()) {
-      provider.addTask(text, doneCheckBox.isSelected());
-      input.setText("");
-    }
+    if (text.isEmpty()) return;
+    provider.addTask(text, checkBox.isSelected());
+    input.setText("");
   }
 }
