@@ -4,7 +4,7 @@ A simple Todo app made with Java and Swing, using the MVVM pattern.
 
 ## Requirements
 
-I made this using Java 17, however I'm actually clueless about the Java world, so I don't know it could work with other Java versions (read below for details).
+I made this using Java 17, however I'm actually clueless about the Java world, so I don't know if it could work with other Java versions (read below for details).
 
 ## Background
 
