@@ -29,7 +29,7 @@ public class AboutWindow extends JFrame {
     JLabel author = new JLabel("Author: Josué Martínez");
     author.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-    JLabel version = new JLabel("Version: 0.2.0");
+    JLabel version = new JLabel("Version: 0.3.0");
     version.setAlignmentX(Component.CENTER_ALIGNMENT);
 
     JButton closeButton = new JButton("Close");

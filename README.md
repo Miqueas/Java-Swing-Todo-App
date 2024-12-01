@@ -6,6 +6,9 @@ A simple Todo app made with Java and Swing, using the MVVM pattern.
 
 I made this using Java 17, however I'm actually clueless about the Java world, so I don't know if it could work with other Java versions (read below for details).
 
+> [!NOTE]
+> If it's your first time trying to run this project, and you're using IntelliJ IDEA, you might need to go to "Build" menu and then press "Rebuild Project"
+
 ## Background
 
 I started this yesterday (nov 29, 2024, around 8 PM) as an experiment, all because I was talking with a friend who's learning Java at the university, and he sent me some Java code as a joke, in that code he was using Swing to create some UIs, and I was a bit curious about that, so I decided (somehow as a personal challenge) try to make a small app in Java with Swing.
