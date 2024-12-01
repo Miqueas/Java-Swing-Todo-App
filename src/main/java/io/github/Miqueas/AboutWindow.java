@@ -1,56 +1,57 @@
 package io.github.Miqueas;
 
+import static io.github.Miqueas.Fonts.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.*;
 import java.awt.*;
 
 public class AboutWindow extends JFrame {
-  private JPanel content = new JPanel();
-  private JLabel title = new JLabel("Todo");
-  private JLabel description = new JLabel("A simple todo app in Java");
-  private JLabel author = new JLabel("Author: Josué Martínez");
-  private JLabel version = new JLabel("Version: 0.1.0");
-  private JButton closeButton = new JButton("Close");
-
   public AboutWindow(Component parent) {
     int closeOperation;
 
-    if (parent == null) {
-      closeOperation = JFrame.EXIT_ON_CLOSE;
-    } else {
-      closeOperation = JFrame.DISPOSE_ON_CLOSE;
-    }
+    if (parent == null) { closeOperation = JFrame.EXIT_ON_CLOSE; }
+    else { closeOperation = JFrame.DISPOSE_ON_CLOSE; }
 
     setDefaultCloseOperation(closeOperation);
     setResizable(false);
     setTitle("About");
 
-    content.setLayout(new BoxLayout(this.content, BoxLayout.Y_AXIS));
+    JPanel content = new JPanel();
+    content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
     content.setBorder(new EmptyBorder(10, 10, 10, 10));
 
+    JLabel title = new JLabel("Todo");
     title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+    JLabel description = new JLabel("A simple todo app in Java");
     description.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+    JLabel author = new JLabel("Author: Josué Martínez");
     author.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+    JLabel version = new JLabel("Version: 0.1.0");
     version.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+    JButton closeButton = new JButton("Close");
     closeButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-    title.setFont(Fonts.display);
-    description.setFont(Fonts.normal);
-    author.setFont(Fonts.normal);
-    version.setFont(Fonts.normal);
-    closeButton.setFont(Fonts.normal);
+    title.setFont(display);
+    description.setFont(normal);
+    author.setFont(normal);
+    version.setFont(normal);
+    closeButton.setFont(normal);
     closeButton.setFocusPainted(false);
     closeButton.addActionListener(e -> this.dispose());
 
-    content.add(this.title);
-    content.add(this.description);
+    content.add(title);
+    content.add(description);
     content.add(Box.createRigidArea(new Dimension(0, 10)));
-    content.add(this.author);
-    content.add(this.version);
+    content.add(author);
+    content.add(version);
     content.add(Box.createRigidArea(new Dimension(0, 10)));
-    content.add(this.closeButton, Component.CENTER_ALIGNMENT);
+    content.add(closeButton, Component.CENTER_ALIGNMENT);
 
-    setContentPane(this.content);
+    setContentPane(content);
     pack();
     setLocationRelativeTo(parent);
     setVisible(true);

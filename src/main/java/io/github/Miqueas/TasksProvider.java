@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TasksProvider {
-  private PropertyChangeSupport notifier;
-  private List<TaskModel> tasks;
+  private final PropertyChangeSupport notifier;
+  private final List<TaskModel> tasks;
 
   public TasksProvider() {
     notifier = new PropertyChangeSupport(this);
