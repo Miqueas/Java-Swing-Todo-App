@@ -27,17 +27,21 @@ public class TasksView extends JPanel {
     add(Box.createRigidArea(new Dimension(0, 10)));
     add(scroll);
 
-    provider.onChange(ev -> buildList());
+    build();
+    provider.onChange(ev -> rebuild());
   }
 
-  private void buildList() {
-    list.removeAll();
-
+  private void build() {
     for (TaskModel task : provider.getTasks()) {
       list.add(new TaskItem(task, provider));
     }
 
     revalidate();
     repaint();
+  }
+
+  private void rebuild() {
+    list.removeAll();
+    build();
   }
 }
