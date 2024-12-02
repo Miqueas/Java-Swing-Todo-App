@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class AppWindow extends JFrame {
-  public AppWindow(TasksProvider tasksProvider) {
+  public AppWindow() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(400, 600);
     setLocationRelativeTo(null);
@@ -14,8 +14,8 @@ public class AppWindow extends JFrame {
     JMenu fileMenu = new JMenu("File");
     JMenuItem aboutButton = new JMenuItem("About");
     JMenuItem exitButton = new JMenuItem("Exit");
-    TasksView tasksView = new TasksView(tasksProvider);
-    BottomBar bottomBar = new BottomBar(tasksProvider);
+    TasksView tasksView = new TasksView();
+    BottomBar bottomBar = new BottomBar();
 
     aboutButton.setFont(Fonts.normal);
     aboutButton.addActionListener(e -> new AboutWindow(this));

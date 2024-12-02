@@ -6,12 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TasksProvider {
+  private static TasksProvider instance;
+
   private final PropertyChangeSupport notifier;
   private final List<TaskModel> tasks;
 
   public TasksProvider() {
     tasks = new ArrayList<TaskModel>();
     notifier = new PropertyChangeSupport(this);
+  }
+
+  public static TasksProvider getInstance() {
+    if (instance == null) {
+      instance = new TasksProvider();
+    }
+
+    return instance;
   }
 
   public List<TaskModel> getTasks() {

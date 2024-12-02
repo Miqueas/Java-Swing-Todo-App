@@ -8,10 +8,9 @@ import java.awt.*;
 public class BottomBar extends JPanel {
   private final JCheckBox checkBox;
   private final JTextField input;
-  private final TasksProvider provider;
+  private final TasksProvider provider = TasksProvider.getInstance();
 
-  public BottomBar(TasksProvider tasksProvider) {
-    provider = tasksProvider;
+  public BottomBar() {
     setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
     setBorder(new EmptyBorder(10, 10, 10, 10));
 

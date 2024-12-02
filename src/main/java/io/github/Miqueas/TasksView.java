@@ -5,11 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TasksView extends JPanel {
-  private final TasksProvider provider;
+  private final TasksProvider provider = TasksProvider.getInstance();
   private final JPanel list;
 
-  public TasksView(TasksProvider tasksProvider) {
-    provider = tasksProvider;
+  public TasksView() {
     setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     setBorder(new EmptyBorder(10, 10, 10, 10));
     JLabel title = new JLabel("Todo");
@@ -33,7 +32,7 @@ public class TasksView extends JPanel {
 
   private void build() {
     for (TaskModel task : provider.getTasks()) {
-      list.add(new TaskItem(task, provider));
+      list.add(new TaskItem(task));
     }
 
     revalidate();

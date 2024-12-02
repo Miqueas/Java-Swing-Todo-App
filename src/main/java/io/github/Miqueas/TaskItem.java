@@ -7,12 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TaskItem extends JPanel {
-  private final TasksProvider provider;
+  private final TasksProvider provider = TasksProvider.getInstance();
   private final TaskModel task;
 
-  public TaskItem(TaskModel taskModel, TasksProvider tasksProvider) {
+  public TaskItem(TaskModel taskModel) {
     task = taskModel;
-    provider = tasksProvider;
     setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
     setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
 
