@@ -1,6 +1,8 @@
 # Java Swing Todo App
 
-A simple Todo app made with Java and Swing, using the MVVM pattern.
+A simple Todo app made with Java and Swing.
+
+![Screenshot](screenshot.png)
 
 ## Requirements
 
