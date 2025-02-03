@@ -1,5 +1,6 @@
 package io.github.Miqueas.JavaSwingTodoApp;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import javax.swing.border.EmptyBorder;
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +22,7 @@ public class TasksView extends JPanel {
     JScrollPane scroll = new JScrollPane(list);
     scroll.setAlignmentX(Component.LEFT_ALIGNMENT);
     scroll.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
+    scroll.putClientProperty(FlatClientProperties.STYLE, "borderColor: #00000000");
 
     add(title);
     add(Box.createRigidArea(new Dimension(0, 10)));
