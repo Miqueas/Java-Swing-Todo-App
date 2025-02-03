@@ -3,13 +3,9 @@ repositories { mavenCentral() }
 
 dependencies {
   implementation 'com.formdev:flatlaf:3.5.4'
+  implementation 'com.formdev:flatlaf-extras:3.5.4'
+  implementation 'com.formdev:flatlaf-fonts-inter:4.0'
 }
-
-// java {
-//   toolchain {
-//     languageVersion = JavaLanguageVersion.of(17)
-//   }
-// }
 
 application {
   mainClass = 'io.github.Miqueas.JavaSwingTodoApp.Main'
