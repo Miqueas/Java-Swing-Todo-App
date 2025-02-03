@@ -1,0 +1,16 @@
+plugins { id 'application' }
+repositories { mavenCentral() }
+
+dependencies {
+  implementation 'com.formdev:flatlaf:3.5.4'
+}
+
+// java {
+//   toolchain {
+//     languageVersion = JavaLanguageVersion.of(17)
+//   }
+// }
+
+application {
+  mainClass = 'io.github.Miqueas.JavaSwingTodoApp.Main'
+}

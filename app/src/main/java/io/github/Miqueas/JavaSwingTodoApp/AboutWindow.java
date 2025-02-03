@@ -1,6 +1,6 @@
-package io.github.Miqueas;
+package io.github.Miqueas.JavaSwingTodoApp;
 
-import static io.github.Miqueas.Fonts.*;
+import static io.github.Miqueas.JavaSwingTodoApp.Fonts.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.*;
 import java.awt.*;

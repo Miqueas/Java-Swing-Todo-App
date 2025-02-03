@@ -1,4 +1,4 @@
-package io.github.Miqueas;
+package io.github.Miqueas.JavaSwingTodoApp;
 
 import java.awt.Font;
 
