@@ -1,5 +1,6 @@
 package io.github.Miqueas.JavaSwingTodoApp;
 
+import com.formdev.flatlaf.extras.FlatDesktop;
 import javax.swing.*;
 import java.awt.*;
 
@@ -30,5 +31,9 @@ public class AppWindow extends JFrame {
     Container content = this.getContentPane();
     content.add(BorderLayout.CENTER, tasksView);
     content.add(BorderLayout.PAGE_END, bottomBar);
+
+    // MacOS actions
+    FlatDesktop.setAboutHandler(() -> new AboutWindow(this));
+    FlatDesktop.setQuitHandler(response -> response.performQuit());
   }
 }
